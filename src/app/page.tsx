@@ -2,50 +2,44 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-8 px-4 py-12">
-      <div className="max-w-2xl space-y-3">
-        <p className="text-sm font-medium text-zinc-500">College project</p>
-        <h1 className="text-3xl font-semibold tracking-tight">
+    <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-4 py-16">
+      <div className="max-w-xl space-y-4">
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
           Performance Management System
         </h1>
         <p className="text-lg leading-7 text-zinc-600">
-          Plan work with goals. Record outcomes with reviews and goal ratings.
-          Those two layers stay separate. Access is decided on the server by
-          who you are and who reports to you — not by hiding buttons.
+          Set goals, complete reviews, and record ratings for a services team.
         </p>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-xl border border-zinc-200 bg-white p-4">
-          <h2 className="font-medium">Employee</h2>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            Draft and submit your own goals. Complete self-appraisal when a
-            cycle is open.
-          </p>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white p-4">
-          <h2 className="font-medium">Manager</h2>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            Approve or send back reports&apos; goals. Review their appraisals.
-            A manager is an employee with people in{" "}
-            <code className="rounded bg-zinc-100 px-1 text-xs">manager_id</code>
-            .
-          </p>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white p-4">
-          <h2 className="font-medium">HR admin</h2>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            Run cycles and see the whole company. Admin actions are checked
-            again on the server, not only in the UI.
-          </p>
-        </div>
-      </div>
-      <p className="text-sm text-zinc-600">
-        Already have an account?{" "}
-        <Link href="/dashboard" className="font-medium text-zinc-900 underline">
-          Open the dashboard
+        <Link
+          href="/sign-in"
+          className="inline-flex h-10 items-center rounded-md bg-zinc-900 px-4 text-sm font-medium text-white hover:bg-zinc-700"
+        >
+          Sign In
         </Link>
-        . Signed-out visitors are sent to sign in.
-      </p>
+      </div>
+
+      <div className="mt-14 grid gap-4 sm:grid-cols-3">
+        <article className="rounded-xl border border-zinc-200 bg-white p-5">
+          <h2 className="font-medium text-zinc-900">Goals</h2>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Employees plan the year. Managers approve the plan or send it back.
+          </p>
+        </article>
+        <article className="rounded-xl border border-zinc-200 bg-white p-5">
+          <h2 className="font-medium text-zinc-900">Reviews</h2>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Self-appraisal first, then the manager review, then a completed
+            cycle.
+          </p>
+        </article>
+        <article className="rounded-xl border border-zinc-200 bg-white p-5">
+          <h2 className="font-medium text-zinc-900">Roles</h2>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            The same screens serve employees, managers, and HR — each sees
+            only what they should.
+          </p>
+        </article>
+      </div>
     </main>
   );
 }
